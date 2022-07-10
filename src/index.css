@@ -1,0 +1,305 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "Wadik";
+  src: url("./fonts/Wadik.otf");
+}
+
+@font-face {
+  font-family: "RockStar";
+  src: url("./fonts//RS-regular.otf");
+}
+
+@font-face {
+  font-family: "RockStar extrabold";
+  src: url("./fonts/RS-extrabold.otf");
+}
+
+@font-face {
+  font-family: "RockStar semibold";
+  src: url("./fonts/RS-semibold.otf");
+}
+
+@font-face {
+  font-family: "RockStar extralight";
+  src: url("./fonts/RS-extralight.otf");
+}
+
+h1 {
+  font-family: 'Inter', sans-serif;
+}
+
+.bg-red-head {
+  background-image: url("./assets//bg_red_head.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-red-tail {
+  background-image: url("./assets//bg_red_tail.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loading {
+  height: 600px;
+}
+
+.bg-big {
+  background-image: url("./assets//bg_big.png");
+  background-repeat: repeat-y;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.bg-image {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 250px;
+}
+
+.bg-about-us {
+  background-image: url("./assets/about_us_hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-us-hero {
+  height: 250px;
+}
+
+.container-90 {
+  width: 95% !important;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.fs-max {
+  font-size: 24px;
+  font-family: "Wadik";
+}
+
+.fs-superbig {
+  font-size: 30px;
+  font-family: "RockStar semibold";
+  text-align: center;
+}
+
+.fs-regular {
+  font-size: 8px !important;
+  font-family: "RockStar";
+  line-height: 8px;
+}
+
+.fs-btn {
+  font-size: 12px !important;
+  line-height: 16px !important;
+}
+
+.btn-main {
+  background-color: white !important;
+  font-family: "Wadik";
+  text-align: center;
+  width: max-content;
+  border: none !important;
+  position: absolute;
+  bottom: 5%;
+  padding: 3% 7%;
+  transition: 0.3s;
+}
+
+.bg-grey {
+  background-color: #D9D9D980;
+  padding: 10px 5px !important;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.bg-grey-numbers {
+  background-color: #D9D9D980;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.info-hero {
+  height: 100%;
+}
+
+.video-card {
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.video-icon {
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  cursor: pointer;
+}
+
+.video-size {
+  height: 180px
+}
+
+.zindex-top {
+  z-index: 2;
+}
+
+.video-card:hover {
+  filter: brightness(70%);
+}
+
+.about-us-hero-title {
+  bottom: 30%
+}
+
+.fs-small {
+  font-size: 6px;
+}
+
+@media screen and (min-width: 425px) {
+  .bg-image {
+    height: 350px
+  }
+  .about-us-hero {
+    height: 350px;
+  }
+  .bg-grey {
+    padding: 20px 20px !important;
+  }
+  .fs-max {
+    font-size: 32px;
+  }
+  .fs-regular {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .fs-small {
+    font-size: 8px;
+  }  
+  .fs-btn {
+    font-size: 16px !important;
+  }
+  .fs-superbig {
+    font-size: 40px;
+  }
+  .video-size {
+    height: 250px
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .bg-image {
+    height: 500px;
+  }
+  .about-us-hero {
+    height: 500px;
+  }
+  .fs-regular {
+    font-size: 14px !important;
+  }
+  .fs-small {
+    font-size: 12px;
+  }
+  .fs-btn {
+    font-size: 28px !important;
+  }
+  .info-hero {
+    background: url("./assets/info_hero.png");
+    background-position: center top;
+  }
+  .fs-superbig {
+    font-size: 64px;
+  }
+  .video-size {
+    height: 450px
+  }
+  .about-us-hero-title {
+    bottom: 20%
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bg-image {
+    height: 600px
+  }
+  .about-us-hero {
+    height: 600px;
+  }
+  .fs-max {
+    font-size: 48px !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .bg-image {
+    height: 800px
+  }
+  .about-us-hero {
+    height: 800px;
+  }
+  .fs-max {
+    font-size: 64px !important;
+  }
+  .fs-regular {
+    font-size: 24px !important;
+    line-height: 24px !important;
+  }
+  .fs-small {
+    font-size: 18px;
+  }  
+  .fs-superbig {
+    font-size: 128px;
+  }
+  .video-size {
+    height: 700px
+  }
+  .about-us-hero-title {
+    bottom: 10%
+  }
+}
+
+@media screen and (min-width: 1560px) {
+  .bg-image {
+    height: 1000px;
+  }
+  .about-us-hero {
+    height: 1000px;
+  }
+  .fs-max {
+    font-size: 96px !important;
+  }
+  .fs-regular {
+    font-size: 40px !important;
+    line-height: 40px !important;
+  }
+  .fs-btn {
+    font-size: 48px !important;
+  }
+  .fs-superbig {
+    font-size: 220px;
+  }
+}
+
+.btn-main:hover {
+  background-color: rgb(232, 232, 232) !important;
+}
