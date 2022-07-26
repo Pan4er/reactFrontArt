@@ -153,6 +153,10 @@ h1 {
   cursor: pointer;
 }
 
+.social-media-icon {
+  font-size: 20px;
+}
+
 .video-icon {
   font-size: 100px;
   color: white;
@@ -178,6 +182,13 @@ h1 {
 
 .fs-small {
   font-size: 6px;
+}
+
+.bg-image-contacts {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 400px;
 }
 
 @media screen and (min-width: 425px) {
@@ -208,6 +219,9 @@ h1 {
   }
   .video-size {
     height: 250px
+  }
+  .bg-image-contacts {
+    height: 500px;
   }
 }
 
@@ -243,6 +257,12 @@ h1 {
   .video-preview {
     height: 300px;
   }
+  .social-media-icon {
+    font-size: 36px;
+  }
+  .bg-image-contacts {
+    height: 700px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -254,6 +274,9 @@ h1 {
   }
   .fs-max {
     font-size: 48px !important;
+  }
+  .bg-image-contacts {
+    height: 800px;
   }
 }
 
@@ -286,6 +309,9 @@ h1 {
   .video-preview {
     height: 500px;
   }
+  .bg-image-contacts {
+    height: 900px;
+  }
 }
 
 @media screen and (min-width: 1560px) {
@@ -310,6 +336,12 @@ h1 {
   }
   .video-preview {
     height: 700px;
+  }
+  .social-media-icon {
+    font-size: 48px;
+  }
+  .bg-image-contacts {
+    height: 1150px;
   }
 }
 

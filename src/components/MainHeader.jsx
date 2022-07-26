@@ -25,7 +25,7 @@ const MainHeader = () => {
                         </NavLink>
                     </Nav.Link>
                     <Nav.Link>
-                        <NavLink to="/about-us" className={(navData) => (navData.isActive ? "text-dark border-bottom border-dark text-decoration-none" : "text-decoration-none text-dark border-0")}>О нас</NavLink>
+                        <NavLink to="/about-us" className={(navData) => (navData.isActive ? "text-dark border-bottom border-dark text-decoration-none" : "text-decoration-none text-dark border-0")}>О методике</NavLink>
                     </Nav.Link>
                     <Nav.Link>
                         <NavLink to="/contacts" className={(navData) => (navData.isActive ? "text-dark border-bottom border-dark text-decoration-none" : "text-decoration-none text-dark border-0")}>Контакты</NavLink>

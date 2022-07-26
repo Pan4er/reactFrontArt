@@ -8,17 +8,18 @@ const Footer = () => {
             <h2 className='inter fw-bold text-center text-md-start'>ART STRUCTURA</h2>
         </Col>
         <Col className='d-flex row gap-3 gap-md-5'>
-            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="#">О нас</a>
-            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="#">Одежда</a>
-            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="#">Контакты</a>
+            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="/about-us">О методике</a>
+            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="#">Одежда (в разработке)</a>
+            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="/contacts">Контакты</a>
         </Col>
         <Col className='d-flex row gap-3 gap-md-5'>
-            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="#">Вконтакте</a>
-            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="#">Красная кнопка</a>
-            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="#">Другая социальная сеть</a>
+            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="https://vk.com/art_structura">Вконтакте</a>
+            <a style={{cursor: "pointer", textDecoration: "none", color: "red"}} className="fs-regular" href="https://www.instagram.com/art_structura/">Instagram</a>
+            <a style={{cursor: "pointer", textDecoration: "none", color: "white"}} className="fs-regular" href="https://t.me/art_structura1">Telegram</a>
         </Col>
-        <Col className='d-flex row gap-3 gap-md-5'>
-            <p className="fs-regular border-bottom border-light w-75 py-2" href="#">Наши адреса</p>
+        <Col className='d-flex row'>
+            <p className="fs-regular border-bottom border-light w-75 py-2">Наши адреса</p>
+            <p className="fs-regular" style={{lineHeight: "20px"}}>113, пр-т. Энгельса, корп. 1, г. Санкт-Петербург, 194354</p>
         </Col>
     </Row>
   )
