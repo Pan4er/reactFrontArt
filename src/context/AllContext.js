@@ -17,7 +17,6 @@ const REDUCER = (state, action) => {
             return {
                 ...state,
                 videos: action.payload.videos,
-                limit: action.payload.limit
             }
         case "GET_VIDEO":
             return {
@@ -28,7 +27,6 @@ const REDUCER = (state, action) => {
             return {
                 ...state,
                 posts: action.payload.posts,
-                lastPost: action.payload.lastPost
             }
         case "GET_POST":
             return {
@@ -39,6 +37,11 @@ const REDUCER = (state, action) => {
             return {
                 ...state,
                 error: true
+            }
+        case "SET_LIMIT":
+            return {
+                ...state,
+                limit: action.payload.limit
             }
         default: return state;
     }
@@ -58,8 +61,7 @@ const AllContextProvider = ({children}) => {
         dispatch({
             type: "GET_ALL_VIDEOS",
             payload: {
-                videos: videosList,
-                limit: 6
+                videos: videosList
             }
         })
     }
@@ -67,17 +69,17 @@ const AllContextProvider = ({children}) => {
     const GetVideo = async (id) => {
         await axios.get(`https://toyyotbackend.ru/videos/id/${id}`)
         .then(res => {
+            console.log(res.data)
             dispatch({
                 type: "GET_VIDEO",
-                payload: res.data
+                payload: res.data.video
             })
         })
         .catch(err => console.log(err))
     }
 
     const GetNextVideos = async (lim) => {
-        let newLimit = lim + 6;
-        console.log(newLimit, lim)
+        let newLimit = parseInt(lim) + 6;
         newLimit = newLimit.toString();
         const videosList = [];
         await axios.get(`https://toyyotbackend.ru/videos/${newLimit}`)
@@ -86,7 +88,33 @@ const AllContextProvider = ({children}) => {
         dispatch({
             type: "GET_ALL_VIDEOS",
             payload: {
-                videos: videosList,
+                videos: videosList
+            }
+        })
+        dispatch({
+            type: "SET_LIMIT",
+            payload: {
+                limit: newLimit
+            }
+        })
+    }
+
+    const GetNextPosts = async (lim) => {
+        let newLimit = parseInt(lim) + 6;
+        newLimit = newLimit.toString();
+        const postsList = [];
+        await axios.get(`https://toyyotbackend.ru/websitePosts/${newLimit}`)
+        .then(res => res.data.posts.forEach(post => postsList.push(post)))
+        .catch(err => console.log(err))
+        dispatch({
+            type: "GET_ALL_POSTS",
+            payload: {
+                posts: postsList
+            }
+        })
+        dispatch({
+            type: "SET_LIMIT",
+            payload: {
                 limit: newLimit
             }
         })
@@ -95,15 +123,14 @@ const AllContextProvider = ({children}) => {
     const GetAllPosts = async () => {
         const postsList = [];
         await axios.get("https://toyyotbackend.ru/websitePosts/6")
-        .then(res => {console.log(res.data)
+        .then(res => {
             res.data.posts.forEach(post => postsList.push(post))
         })
         .catch(err => console.log(err))
         dispatch({
             type: "GET_ALL_POSTS",
             payload: {
-                posts: postsList,
-                limit: 6
+                posts: postsList
             }
         })
     }
@@ -111,6 +138,7 @@ const AllContextProvider = ({children}) => {
     const GetPost = async (id) => {
         await axios.get(`https://toyyotbackend.ru/websitePosts/id/${id}`)
         .then(res => {
+            
             dispatch({
                 type: "GET_POST",
                 payload: res.data
@@ -132,7 +160,8 @@ const AllContextProvider = ({children}) => {
             GetVideo,
             GetNextVideos,
             GetAllPosts,
-            GetPost
+            GetPost,
+            GetNextPosts
         }}>
             {children}
         </allContext.Provider>

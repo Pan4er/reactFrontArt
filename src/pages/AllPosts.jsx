@@ -8,7 +8,11 @@ import PostPreview from '../components/Blog/PostPreview';
 
 const AllPosts = () => {
 
-    const { GetAllPosts, GetNextVideos, posts, limit } = useContext(allContext);
+    const { GetAllPosts, GetNextPosts, posts, limit } = useContext(allContext);
+    let order = false
+    let anchor = null
+
+    console.log(limit)
 
     useEffect(() => {
         GetAllPosts();
@@ -30,12 +34,23 @@ const AllPosts = () => {
             <div  className='container-90 d-flex flex-column justify-content-center'>
                 <Row className='w-100 m-0'>
                     {
-                        posts.map((post) => {
+                        posts.map((post, i) => {
+                            if(anchor && i >= anchor + 2) {
+                                order = !order
+                                anchor = i
+                            }
+                            if(anchor === 1) {
+                                order = true
+                            }
+                            if(!order && i === 0) {
+                                anchor = 1
+                            }
                             return <PostPreview
                                     post_imageUrl={post.post_imageUrl}
                                     post_name={post.post_name}
                                     postId={post.id}
                                     post_date={post.post_date}
+                                    order={order}
                                     />
                         })
                     }
@@ -43,7 +58,7 @@ const AllPosts = () => {
                 <div 
                     role="button" 
                     className='d-flex justify-content-center my-3'
-                    onClick={() => GetNextVideos(limit)}>
+                    onClick={() => GetNextPosts(limit)}>
                     <h2 className='fs-max border-bottom border-4 border-dark'>
                         Загрузить больше
                     </h2>

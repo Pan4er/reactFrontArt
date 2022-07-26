@@ -48,6 +48,10 @@ h1 {
   background-size: cover;
 }
 
+.video-preview {
+  height: 150px;
+}
+
 .bg-red-tail {
   background-image: url("./assets//bg_red_tail.png");
   background-repeat: no-repeat;
@@ -236,6 +240,9 @@ h1 {
   .about-us-hero-title {
     bottom: 20%
   }
+  .video-preview {
+    height: 300px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -276,6 +283,9 @@ h1 {
   .about-us-hero-title {
     bottom: 10%
   }
+  .video-preview {
+    height: 500px;
+  }
 }
 
 @media screen and (min-width: 1560px) {
@@ -297,6 +307,9 @@ h1 {
   }
   .fs-superbig {
     font-size: 220px;
+  }
+  .video-preview {
+    height: 700px;
   }
 }
 

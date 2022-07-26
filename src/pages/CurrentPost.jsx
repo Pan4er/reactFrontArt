@@ -13,8 +13,6 @@ const CurrentPost = () => {
     // const [videoId, setVideoId] = useState(params.videoId);
     const navigate = useNavigate();
 
-    console.log(post, posts)
-
     useEffect(() => {
         GetPost(params.postId);
         GetAllPosts();

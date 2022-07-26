@@ -4,19 +4,25 @@ import $ from "jquery";
 import { Icon } from '@iconify/react';
 import { useNavigate } from "react-router-dom";
 
-const PostPreview = ({post_name, post_imageUrl, post_date, postId}) => {
+const PostPreview = ({post_name, post_imageUrl, post_date, postId, order}) => {
 
     const [current, setCurrent] = useState();
     const navigate = useNavigate();
-    console.log(post_date)
+    const imgStyle = {
+        backgroundImage: `url("${post_imageUrl}")`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+    }
 
     return (
         <Col 
-            className='col-4 px-1 px-sm-3 my-3 my-sm-5'
+            className={`col-4 px-1 px-sm-3 my-3 video-preview ${order ? "col-8" : "col-4"}`}
             >
             <div className='h-75 position-relative shadow' id={`${postId}`}
                 onClick={() => navigate(`/blog/posts/${postId}`)}>
-                <img 
+                <div 
+                    style={imgStyle}
                     className='w-100 h-100 rounded-3 video-card' 
                     src={post_imageUrl}/>
                 {

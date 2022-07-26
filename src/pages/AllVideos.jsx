@@ -5,10 +5,13 @@ import VideoPreview from '../components/Blog/VideoPreview';
 import MainHeader from "../components/MainHeader";
 import { allContext } from '../context/AllContext';
 import { Row } from "react-bootstrap";
+import { useState } from 'react';
 
 const AllVideos = () => {
 
     const { GetAllVideos, GetNextVideos, videos, limit } = useContext(allContext);
+    let order = false
+    let anchor = null
 
     useEffect(() => {
         GetAllVideos();
@@ -30,11 +33,22 @@ const AllVideos = () => {
             <div  className='container-90 d-flex flex-column justify-content-center'>
                 <Row className='w-100 m-0'>
                     {
-                        videos.map((video) => {
+                        videos.map((video, i) => {
+                            if(anchor && i >= anchor + 2) {
+                                order = !order
+                                anchor = i
+                            }
+                            if(anchor === 1) {
+                                order = true
+                            }
+                            if(!order && i === 0) {
+                                anchor = 1
+                            }
                             return <VideoPreview
                                     thumbnail_url={video.thumbnail_url}
                                     video_name={video.video_name}
-                                    videoId={video.id}/>
+                                    videoId={video.id}
+                                    order={order}/>
                         })
                     }
                 </Row>

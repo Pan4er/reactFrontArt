@@ -25,7 +25,7 @@ const Header = () => {
                         </NavLink>
                     </Nav.Link>
                     <Nav.Link>
-                        <NavLink to="/about-us" className={(navData) => (navData.isActive ? "text-light border-bottom border-light border-2 text-decoration-none" : "text-decoration-none text-light border-0")}>О методике тренировок</NavLink>
+                        <NavLink to="/about-us" className={(navData) => (navData.isActive ? "text-light border-bottom border-light border-2 text-decoration-none" : "text-decoration-none text-light border-0")}>О нас</NavLink>
                     </Nav.Link>
                     <Nav.Link>
                         <NavLink to="/contacts" className={(navData) => (navData.isActive ? "text-light border-bottom border-light border-2 text-decoration-none" : "text-decoration-none text-light border-0")}>Контакты</NavLink>
