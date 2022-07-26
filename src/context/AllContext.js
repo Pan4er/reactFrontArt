@@ -52,7 +52,7 @@ const AllContextProvider = ({children}) => {
 
     const GetAllVideos = async () => {
         const videosList = [];
-        await axios.get("https://51.250.39.117:3443/videos/6")
+        await axios.get("https://toyyotbackend.ru/videos/6")
         .then(res => res.data.videos.forEach(video => videosList.push(video)))
         .catch(err => console.log(err))
         dispatch({
@@ -65,7 +65,7 @@ const AllContextProvider = ({children}) => {
     }
 
     const GetVideo = async (id) => {
-        await axios.get(`https://51.250.39.117:3443/videos/id/${id}`)
+        await axios.get(`https://toyyotbackend.ru/videos/id/${id}`)
         .then(res => {
             dispatch({
                 type: "GET_VIDEO",
@@ -80,7 +80,7 @@ const AllContextProvider = ({children}) => {
         console.log(newLimit, lim)
         newLimit = newLimit.toString();
         const videosList = [];
-        await axios.get(`https://51.250.39.117:3443/videos/${newLimit}`)
+        await axios.get(`https://toyyotbackend.ru/videos/${newLimit}`)
         .then(res => res.data.videos.forEach(video => videosList.push(video)))
         .catch(err => console.log(err))
         dispatch({
@@ -94,7 +94,7 @@ const AllContextProvider = ({children}) => {
 
     const GetAllPosts = async () => {
         const postsList = [];
-        await axios.get("https://51.250.39.117:3443/websitePosts/6")
+        await axios.get("https://toyyotbackend.ru/websitePosts/6")
         .then(res => {console.log(res.data)
             res.data.posts.forEach(post => postsList.push(post))
         })
@@ -109,7 +109,7 @@ const AllContextProvider = ({children}) => {
     }
 
     const GetPost = async (id) => {
-        await axios.get(`https://51.250.39.117:3443/websitePosts/id/${id}`)
+        await axios.get(`https://toyyotbackend.ru/websitePosts/id/${id}`)
         .then(res => {
             dispatch({
                 type: "GET_POST",
