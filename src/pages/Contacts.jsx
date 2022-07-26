@@ -12,11 +12,11 @@ const Contacts = () => {
         <div className='fs-regular wadik mt-3 mt-md-5 pt-0 pb-3 pt-lg-5'>
           <div className='d-flex gap-3 gap-md-5'>
             <p>Телефон:</p>
-            <p>+7 951 665-25-88</p>
+            <p>+7 911 242-76-73</p>
           </div>
           <div className='d-flex gap-3 gap-md-5'>
             <p>Телефон:</p>
-            <p>+7 911 242-76-73</p>
+            <p>+7 961 800-41-36</p>
           </div>
           <div className='my-2 my-md-5'>
             <p>Социальные сети:</p>
