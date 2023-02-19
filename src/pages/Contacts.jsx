@@ -27,11 +27,6 @@ const Contacts = () => {
                 <Icon icon="el:vkontakte"/>
               </a>
               <a 
-                href='https://www.instagram.com/art_structura/'
-                style={{color: "white"}}>
-                <Icon icon="akar-icons:instagram-fill"/>
-              </a>
-              <a 
                 href='https://www.youtube.com/channel/UCEOKXEd7Kr4lSYkOkjq70aw'
                 style={{color: "white"}}>
                 <Icon icon="akar-icons:youtube-fill"/>
