@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import MainHeader from '../components/MainHeader';
 import PostPreview from '../components/Blog/PostPreview';
 import { useNavigate } from "react-router-dom";
+import MyText from '../components/MyText';
 
 const CurrentPost = () => {
 
@@ -45,7 +46,7 @@ const CurrentPost = () => {
                 <img className='w-100' src={post.post_imageUrl}/>
                 <div>
                     <h4 className='fs-regular fw-bold'>{post.post_header}</h4>
-                    <p className='fs-regular my-4 my-sm-5'>{post.post_text}</p>
+                    <MyText stringProp={post.post_text}/>
                 </div>
                 <div>
                     <h2 className='fs-max'>Другие статьи</h2>
